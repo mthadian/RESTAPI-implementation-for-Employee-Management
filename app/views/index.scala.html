@@ -1,0 +1,86 @@
+@(message: String)
+
+@main(message) {
+    <h1>@message</h1>
+    <hr>
+    <p>This is a REST API for Employees</p>
+    <p>Use the table below for your Rest Client</p>
+    <table class="table table-bordered table-hover table-condensed">
+        <tr>
+            <th>Method</th>
+            <th>URI</th>
+            <th>Data</th>
+            <th>HTTP Code</th>
+            <th>Response (in JSON)</th>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/employees</td>
+            <td></td>
+            <td>200</td>
+            <td>{"data":[],"total":0,"link-self":"/employees"}</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/employees/1</td>
+            <td></td>
+            <td>200</td>
+            <td>{"id": ,"name": " "}</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/employees/id</td>
+            <td></td>
+            <td>404</td>
+            <td>{"error":"Not found id"}</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/employees</td>
+            <td>{"name": "new user"}</td>
+            <td>201</td>
+            <td>{"id": id,"name": "new user"}</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/employees</td>
+            <td></td>
+            <td>400</td>
+            <td>{"name": ["This field is required"]}</td>
+        </tr>
+        <tr>
+            <td>PUT/PATCH</td>
+            <td>/employees</td>
+            <td>{"id": 1,"name": "new name"}</td>
+            <td>200</td>
+            <td>{"id": 1,"name": "new name"}</td>
+        </tr>
+        <tr>
+            <td>PUT/PATCH</td>
+            <td>/employees</td>
+            <td></td>
+            <td>400</td>
+            <td>{"name": ["This field is required"]}</td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td>/employees/1</td>
+            <td></td>
+            <td>200</td>
+            <td>{"msg":"Deleted 1"}</td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td>/employees/0</td>
+            <td></td>
+            <td>404</td>
+            <td>{"error":"Not found 0"}</td>
+        </tr>
+    </table>
+    <hr>
+    
+    <ul>
+        <li><h4>Patrick Mulwa Muthama</h4></li>
+        
+    </ul>
+}
